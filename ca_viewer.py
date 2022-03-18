@@ -107,14 +107,12 @@ def main(argv):
             print("\n\nThank you for using the CA Viewer.\n\n")
             sys.exit(0)
         if input_string == "I" or input_string == "i":
-            #print("\n\nThank you for using the CA Viewer.\n\n")
-            #sys.exit(0)
             new_ca_string = input("Please enter a bit string that is exactly 128 bits long: ")
             if len(new_ca_string) < 128:
-                print("\n\nCellular Automata (CA) must be exactly 128 bits. You only entered "+str(len(new_ca_string))+" bits.\n\n")
+                print("\n\nCellular Automata (CA) must be exactly 128 bits. You only entered "+str(len(new_ca_string))+" characters.\n\n")
                 continue
             if len(new_ca_string) > 128:
-                print("\n\nCellular Automata (CA) must be exactly 128 bits. You entered "+str(len(new_ca_string))+" bits.\n\n")
+                print("\n\nCellular Automata (CA) must be exactly 128 bits. You entered "+str(len(new_ca_string))+" characters.\n\n")
                 continue
             try:
                 checker = int(new_ca_string,2)
@@ -136,12 +134,10 @@ def main(argv):
             continue
             #sys.exit(4)
 
-
         #--------------
         # Run the 2D CA
         #--------------
         total_results = run_2DCA(ca_string, input_string, num_gens)
-        
 
         #----------
         # Plot Grid
